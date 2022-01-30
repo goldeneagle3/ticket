@@ -6,11 +6,16 @@
   "scripts": {
     "start": "ts-node-dev --poll ./src/index.ts",
     "test": "jest --watchAll --no-cashe --detectOpenHandles",
-    "test:ci": "jest --detectOpenHandles"
+    "test:ci": "jest --runInBand --detectOpenHandles"
   },
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
+    "verbose": true,
+    "forceExit": true,
+    "clearMocks": true,
+    "resetMocks":true,
+    "restoreMocks":true,
     "setupFilesAfterEnv": [
       "./src/test/setup.ts"
     ]
