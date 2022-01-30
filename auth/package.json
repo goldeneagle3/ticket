@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node-dev --poll ./src/index.ts",
-    "test": "jest --watchAll --no-cashe",
-    "test:ci": "jest"
+    "test": "jest --watchAll --no-cashe --detectOpenHandles",
+    "test:ci": "jest --detectOpenHandles"
   },
   "jest": {
     "preset": "ts-jest",
