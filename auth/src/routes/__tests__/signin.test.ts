@@ -6,7 +6,7 @@ const route = "/api/users/signin"
 it('successfull signin return 201',async () => {
   await request(app).post("/api/users/signup").send({email:'test@test.com',password: 'password'}).expect(201)
 
-  await request(app).post(route).send({email:'test@test.com',password: 'password'}).expect(400)
+  await request(app).post(route).send({email:'test@test.com',password: 'password'}).expect(200)
 })
 
 it('invalid email return 422',async () => {
