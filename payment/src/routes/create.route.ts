@@ -43,8 +43,6 @@ router
         source: req.body.token,
       });
 
-      console.log(id);
-
       const payment = Payment.build({
         orderId: req.body.orderId,
         stripeId: id,
