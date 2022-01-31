@@ -50,7 +50,7 @@ const start = async () => {
 
     await mongoose.connect(process.env.MONGO_URI);
     console.log("Connected to MongoDb");
-    app.listen(3000, () => console.log("Hello from orders"));
+    app.listen(3000, () => console.log("Hello from Orders Service."));
   } catch (error) {
     console.log(error);
   }

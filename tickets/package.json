@@ -7,7 +7,6 @@
     "start": "ts-node-dev --poll ./src/index.ts",
     "test": "jest --watchAll --no-cashe",
     "test:ci": "jest --runInBand --detectOpenHandles"
-
   },
   "jest": {
     "preset": "ts-jest",
