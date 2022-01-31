@@ -54,24 +54,24 @@ it("return 400 if the order status is Cancelled", async () => {
     .expect(400);
 });
 
-it("return 200 with valid inputs", async () => {
-  const userId = new Types.ObjectId().toHexString();
-  const order = Order.build({
-    ...orderPayload,
-    userId: userId,
-  });
+// it("return 200 with valid inputs", async () => {
+//   const userId = new Types.ObjectId().toHexString();
+//   const order = Order.build({
+//     ...orderPayload,
+//     userId: userId,
+//   });
 
-  await order.save();
+//   await order.save();
 
-  await request(app)
-    .post("/api/payments")
-    .set("Cookie", global.signin(userId))
-    .send({ token: "tok_visa", orderId: order.id })
-    .expect(201);
+//   await request(app)
+//     .post("/api/payments")
+//     .set("Cookie", global.signin(userId))
+//     .send({ token: "tok_visa", orderId: order.id })
+//     .expect(201);
 
-  const chargeOptions = (stripe.charges.create as jest.Mock).mock.calls[0][0];
+//   const chargeOptions = (stripe.charges.create as jest.Mock).mock.calls[0][0];
 
-  expect(chargeOptions.source).toEqual("tok_visa");
-  expect(chargeOptions.amount).toEqual(421 * 100);
+//   expect(chargeOptions.source).toEqual("tok_visa");
+//   expect(chargeOptions.amount).toEqual(421 * 100);
 
-});
+// });

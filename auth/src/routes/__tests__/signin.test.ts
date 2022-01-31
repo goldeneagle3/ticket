@@ -3,7 +3,7 @@ import { app } from '../../app'
 
 const route = "/api/users/signin"
 
-it('successfull signin return 201',async () => {
+it('successfull signin return 200',async () => {
   await request(app).post("/api/users/signup").send({email:'test@test.com',password: 'password'}).expect(201)
 
   await request(app).post(route).send({email:'test@test.com',password: 'password'}).expect(200)
